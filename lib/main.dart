@@ -490,8 +490,21 @@ class MyHome extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text('Other shoes'),
-                  Text('See All'),
+                  Text('Other shoes',style:TextStyle(
+                      fontFamily: 'EB Garamond',
+                      fontSize: 17,
+                      color: const Color(0xff282c40),
+                      letterSpacing: -0.459,
+                    ),),
+                  Text(
+                    'See All',
+                    style: TextStyle(
+                      fontFamily: 'EB Garamond',
+                      fontSize: 11,
+                      color: const Color(0xff4d79d7),
+                      letterSpacing: -0.297,
+                    ),
+                  ),
                 ],
               ), // *************
 
