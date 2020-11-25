@@ -1,192 +1,310 @@
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
+import 'package:nike_ui/main%20UI_1.dart';
 
 void main() {
-  runApp(MyPage5());
+  runApp(MyMenu());
 }
 
-class MyPage5 extends StatelessWidget {
+class MyMenu extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: MyPage5Content(),
+      home: MyMenuContent(),
     );
   }
 }
 
-class MyPage5Content extends StatelessWidget {
+class MyMenuContent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // appBar: AppBar(
-      //   backgroundColor: Colors.blueAccent,
-      //   actions: [IconButton(icon: Icon(Icons.cancel), onPressed: () {})],
-      // ),
-      appBar: PreferredSize(
-        preferredSize: Size.fromHeight(40.0),
-        child: SafeArea(
-          child: Container(
-            color: HexColor("#5780D9"),
-            child: Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                  IconButton(
-                      color: Colors.black,
-                      icon: Icon(Icons.cancel, color: Colors.white),
-                      onPressed: () {}),
-                ],
+      body: Container(
+        color: HexColor("#5780D9"),
+        child: ListView(
+          children: [
+            ListTile(
+              leading: Icon(Icons.image, color: Colors.white, size: 40),
+              title: Text(
+                'Elayamani',
+                style: TextStyle(
+                  fontFamily: 'EB Garamond',
+                  fontSize: 17,
+                  color: const Color(0xffffffff),
+                  letterSpacing: 0.323,
+                ),
+              ),
+              subtitle: Text(
+                'Chennai',
+                style: TextStyle(
+                  fontFamily: 'Futura',
+                  fontSize: 11,
+                  color: const Color(0xa6ffffff),
+                  letterSpacing: 0.209,
+                  fontWeight: FontWeight.w500,
+                ),
               ),
             ),
-          ),
-        ),
-      ),
-      body: Container(
-        height: double.infinity,
-        width: double.infinity,
-        color: HexColor("#5780D9"),
-        child: Center(
-          child: Stack(
-            children: [
-              Positioned(
-                  left: 100.0,
-                  top: 30.0,
-                  child:
-                      Icon(Icons.add, size: 15.0, color: HexColor("#ACC1EC"))),
-              Positioned(
-                  left: 60.0,
-                  top: 120.0,
-                  child: Container(
-                    height: 10.0,
-                    width: 10.0,
-                    decoration: BoxDecoration(
-                        color: HexColor("#FFFFFF"), shape: BoxShape.circle),
-                  )),
-              Positioned(
-                  left: 40.0,
-                  top: 210.0,
-                  child: Container(
-                    height: 25.0,
-                    width: 25.0,
-                    decoration: BoxDecoration(
-                        color: HexColor("#85A3E4"), shape: BoxShape.circle),
-                  )),
-              Positioned(
-                  left: 40,
-                  top: 480,
-                  child: Container(
-                    height: 12.0,
-                    width: 12.0,
-                    decoration: BoxDecoration(
-                        color: HexColor("#D8E2F6"), shape: BoxShape.circle),
-                  )),
-              Positioned(
-                  left: 100,
-                  top: 550.0,
-                  child: Container(
-                    height: 28.0,
-                    width: 28.0,
-                    decoration: BoxDecoration(
-                        color: HexColor("#688DDD"), shape: BoxShape.circle),
-                  )),
-              Positioned(
-                  left: 200.0,
-                  top: 580.0,
-                  child: Container(
-                    height: 18.0,
-                    width: 18.0,
-                    decoration: BoxDecoration(
-                        color: HexColor("#678CDC"), shape: BoxShape.circle),
-                  )),
-              Positioned(
-                  right: 60.0,
-                  bottom: 80.0,
-                  child: Container(
-                    height: 12.0,
-                    width: 12.0,
-                    decoration: BoxDecoration(
-                        color: HexColor("#AFC3ED"), shape: BoxShape.circle),
-                  )),
-              Positioned(
-                  right: 40.0,
-                  bottom: 150,
-                  child: Container(
-                    height: 25.0,
-                    width: 25.0,
-                    decoration: BoxDecoration(
-                        color: HexColor("#EDF2FB"), shape: BoxShape.circle),
-                  )),
-              Positioned(
-                  right: 40.0,
-                  top: 210.0,
-                  child: Container(
-                    height: 12.0,
-                    width: 12.0,
-                    decoration: BoxDecoration(
-                        color: HexColor("#AFC3ED"), shape: BoxShape.circle),
-                  )),
-              Positioned(
-                  right: 80.0,
-                  top: 70.0,
-                  child: Container(
-                    height: 25.0,
-                    width: 25.0,
-                    decoration: BoxDecoration(
-                        color: HexColor("#D6E0F6"), shape: BoxShape.circle),
-                  )),
-              Center(
-                  child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Icon(Icons.check_circle, color: Colors.white, size: 90),
-                  SizedBox(height: 20.0),
-                  Text(
-                    'ORDER PLACED',
-                    style: TextStyle(
-                      fontFamily: 'EB Garamond',
-                      fontSize: 21,
-                      color: const Color(0xffffffff),
-                    ),
-                  ),
-                  SizedBox(height: 20.0),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Container(
+                  height: MediaQuery.of(context).size.height,
+                  width: MediaQuery.of(context).size.width / 2,
+                  child: ListView(
                     children: [
-                      Container(
-                          decoration: BoxDecoration(
-                              color: HexColor("#6D91DE"),
-                              borderRadius: BorderRadius.circular(8.0)),
-                          child: Padding(
-                            padding: const EdgeInsets.all(25.0),
-                            child: Row(
-                              children: [
-                                Text(
-                                  'Expected delivery',
-                                  style: TextStyle(
-                                    fontFamily: 'EB Garamond',
-                                    fontSize: 15,
-                                    color: const Color(0x4fffffff),
-                                  ),
+                      ListTile(
+                        leading: Icon(Icons.monitor),
+                        title: Text(
+                          'MEN',
+                          style: TextStyle(
+                            fontFamily: 'EB Garamond',
+                            fontSize: 15,
+                            color: const Color(0xffffffff),
+                            letterSpacing: 0.285,
+                          ),
+                        ),
+                        trailing: Icon(Icons.arrow_drop_down),
+                      ),
+                      Row(
+                        children: [
+                          SizedBox(width: 75),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                'Casual Shoes',
+                                style: TextStyle(
+                                  fontFamily: 'Futura',
+                                  fontSize: 14,
+                                  color: const Color(0xff81a0e2),
+                                  letterSpacing: 0.266,
+                                  fontWeight: FontWeight.w500,
                                 ),
-                                SizedBox(width: 15.0),
-                                Text(
-                                  '10 DEC',
-                                  style: TextStyle(
-                                    fontFamily: 'EB Garamond',
-                                    fontSize: 15,
-                                    color: const Color(0xffffffff),
-                                  ),
+                              ),
+                              Text(
+                                'Sports shoes',
+                                style: TextStyle(
+                                  fontFamily: 'Futura',
+                                  fontSize: 14,
+                                  color: const Color(0xff81a0e2),
+                                  letterSpacing: 0.266,
+                                  fontWeight: FontWeight.w500,
                                 ),
-                              ],
-                            ),
-                          )),
+                              ),
+                              Text(
+                                'Flipflops',
+                                style: TextStyle(
+                                  fontFamily: 'Futura',
+                                  fontSize: 14,
+                                  color: const Color(0xff81a0e2),
+                                  letterSpacing: 0.266,
+                                  fontWeight: FontWeight.w500,
+                                ),
+                              ),
+                              Text(
+                                'Sandals',
+                                style: TextStyle(
+                                  fontFamily: 'Futura',
+                                  fontSize: 14,
+                                  color: const Color(0xff81a0e2),
+                                  letterSpacing: 0.266,
+                                  fontWeight: FontWeight.w500,
+                                ),
+                              ),
+                              Text(
+                                'Floaters',
+                                style: TextStyle(
+                                  fontFamily: 'Futura',
+                                  fontSize: 14,
+                                  color: const Color(0xff81a0e2),
+                                  letterSpacing: 0.266,
+                                  fontWeight: FontWeight.w500,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                      ListTile(
+                        leading: Icon(Icons.monitor),
+                        title: Text(
+                          'WOMEN',
+                          style: TextStyle(
+                            fontFamily: 'EB Garamond',
+                            fontSize: 15,
+                            color: const Color(0xffffffff),
+                            letterSpacing: 0.285,
+                          ),
+                        ),
+                        trailing: Icon(Icons.arrow_drop_down),
+                      ),
+                      Row(
+                        children: [
+                          SizedBox(width: 75),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                'Casual Shoes',
+                                style: TextStyle(
+                                  fontFamily: 'Futura',
+                                  fontSize: 14,
+                                  color: const Color(0xff81a0e2),
+                                  letterSpacing: 0.266,
+                                  fontWeight: FontWeight.w500,
+                                ),
+                              ),
+                              Text(
+                                'Sports shoes',
+                                style: TextStyle(
+                                  fontFamily: 'Futura',
+                                  fontSize: 14,
+                                  color: const Color(0xff81a0e2),
+                                  letterSpacing: 0.266,
+                                  fontWeight: FontWeight.w500,
+                                ),
+                              ),
+                              Text(
+                                'Flipflops',
+                                style: TextStyle(
+                                  fontFamily: 'Futura',
+                                  fontSize: 14,
+                                  color: const Color(0xff81a0e2),
+                                  letterSpacing: 0.266,
+                                  fontWeight: FontWeight.w500,
+                                ),
+                              ),
+                              Text(
+                                'Sandals',
+                                style: TextStyle(
+                                  fontFamily: 'Futura',
+                                  fontSize: 14,
+                                  color: const Color(0xff81a0e2),
+                                  letterSpacing: 0.266,
+                                  fontWeight: FontWeight.w500,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                      ListTile(
+                        leading: Icon(Icons.monitor),
+                        title: Text(
+                          'KIDS',
+                          style: TextStyle(
+                            fontFamily: 'EB Garamond',
+                            fontSize: 15,
+                            color: const Color(0xffffffff),
+                            letterSpacing: 0.285,
+                          ),
+                        ),
+                        trailing: Icon(Icons.arrow_drop_down),
+                      ),
+                      Row(
+                        children: [
+                          SizedBox(width: 75),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                'Casual Shoes',
+                                style: TextStyle(
+                                  fontFamily: 'Futura',
+                                  fontSize: 14,
+                                  color: const Color(0xff81a0e2),
+                                  letterSpacing: 0.266,
+                                  fontWeight: FontWeight.w500,
+                                ),
+                              ),
+                              Text(
+                                'Sports shoes',
+                                style: TextStyle(
+                                  fontFamily: 'Futura',
+                                  fontSize: 14,
+                                  color: const Color(0xff81a0e2),
+                                  letterSpacing: 0.266,
+                                  fontWeight: FontWeight.w500,
+                                ),
+                              ),
+                              Text(
+                                'Flipflops',
+                                style: TextStyle(
+                                  fontFamily: 'Futura',
+                                  fontSize: 14,
+                                  color: const Color(0xff81a0e2),
+                                  letterSpacing: 0.266,
+                                  fontWeight: FontWeight.w500,
+                                ),
+                              ),
+                              Text(
+                                'Sandals',
+                                style: TextStyle(
+                                  fontFamily: 'Futura',
+                                  fontSize: 14,
+                                  color: const Color(0xff81a0e2),
+                                  letterSpacing: 0.266,
+                                  fontWeight: FontWeight.w500,
+                                ),
+                              ),
+                              Text(
+                                'Floaters',
+                                style: TextStyle(
+                                  fontFamily: 'Futura',
+                                  fontSize: 14,
+                                  color: const Color(0xff81a0e2),
+                                  letterSpacing: 0.266,
+                                  fontWeight: FontWeight.w500,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
                     ],
-                  )
-                ],
-              )),
-            ],
-          ),
+                  ),
+                ),
+                Expanded(
+                  child: Container(
+                      height: MediaQuery.of(context).size.height,
+                      child: Stack(
+                        children: [
+                          // bottom page container
+                          Positioned(
+                            top: 20.0,
+                            left: 60.0,
+                            child: Container(
+                              height: MediaQuery.of(context).size.height / 1.5,
+                              width: MediaQuery.of(context).size.width,
+                              decoration: BoxDecoration(
+                                  color: HexColor("#91ABE3"),
+                                  borderRadius: BorderRadius.circular(12.0)),
+                            ),
+                          ),
+
+                          // top page container
+                          Positioned(
+                            left: 80.0,
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(10),
+                              child: Container(
+                                child: AbsorbPointer(child: MyHome()),
+                                height:
+                                    MediaQuery.of(context).size.height / 1.3,
+                                width: MediaQuery.of(context).size.width,
+                                decoration: BoxDecoration(
+                                    color: Colors.amber,
+                                    borderRadius: BorderRadius.circular(12.0)),
+                              ),
+                            ),
+                          )
+                        ],
+                      )),
+                ),
+              ],
+            )
+          ],
         ),
       ),
     );
