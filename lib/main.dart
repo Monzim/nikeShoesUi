@@ -2,41 +2,26 @@ import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(MyPage4());
 }
 
-class MyApp extends StatelessWidget {
+class MyPage4 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: MyHome(),
-      // color: Colors.green,
+      home: MyPage4Content(),
     );
   }
 }
 
-class MyHome extends StatelessWidget {
+class MyPage4Content extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // backgroundColor: Colors.grey[300],
       backgroundColor: HexColor("#F5F5F5"),
       // appBar: AppBar(
-      //   backgroundColor: Colors.grey[200],
-      //   leading: Icon(Icons.short_text, color: Colors.black),
-      //   centerTitle: true,
-      //   title: Image(
-      //       height: 80.0,
-      //       image: NetworkImage(
-      //           'https://e7.pngegg.com/pngimages/77/403/png-clipart-swoosh-nike-just-do-it-logo-nike-angle-adidas.png')),
-      //   actions: [
-      //     IconButton(
-      //         icon: Icon(Icons.bookmark_border, color: Colors.black),
-      //         onPressed: null),
-      //     IconButton(
-      //         icon: Icon(Icons.shopping_cart, color: Colors.black),
-      //         onPressed: null)
-      //   ],
+      // backgroundColor: Colors.white,
+      // leading: Icon(Icons.arrow_back_ios),
       // ),
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(70.0),
@@ -44,43 +29,25 @@ class MyHome extends StatelessWidget {
           child: Padding(
             padding: const EdgeInsets.all(8.0),
             child: Container(
+              color: HexColor("#F5F5F5"),
               child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  IconButton(
-                      icon: Icon(
-                        Icons.short_text,
-                        color: Colors.black,
-                        size: 30.0,
-                      ),
-                      onPressed: () {}),
-                  // Icon(
-                  //   Icons.short_text,
-                  //   color: Colors.black,
-                  //   size: 30.0,
-                  // ),
-                  Image(
-                      height: 80.0,
-                      image: NetworkImage(
-                          'https://cdn4.iconfinder.com/data/icons/logos-and-brands/512/230_Nike_logo-512.png')),
-                  Row(
-                    // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      IconButton(
-                          icon: Icon(
-                            Icons.bookmark_border,
-                            color: Colors.black,
-                            size: 30.0,
-                          ),
-                          onPressed: () {}),
-                      IconButton(
-                          icon: Icon(
-                            Icons.shopping_cart,
-                            color: Colors.black,
-                            size: 30.0,
-                          ),
-                          onPressed: () {})
-                    ],
+                  Container(
+                    height: 40,
+                    width: 40,
+                    decoration: BoxDecoration(
+                      color: HexColor("#FFFFFF"),
+                      shape: BoxShape.circle,
+                    ),
+                    // color: Colors.amber,
+                    child: IconButton(
+                        highlightColor: HexColor("#F5F5F5"),
+                        icon: Icon(
+                          Icons.arrow_back_ios,
+                          color: Colors.black,
+                          size: 25.0,
+                        ),
+                        onPressed: () {}),
                   )
                 ],
               ),
@@ -88,1006 +55,315 @@ class MyHome extends StatelessWidget {
           ),
         ),
       ),
-      body: SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                'Discover your',
-                style: TextStyle(
-                  fontFamily: 'Futura',
-                  fontSize: 22,
-                  color: const Color(0x7f282c40),
-                  fontWeight: FontWeight.w500,
-                ),
-                textAlign: TextAlign.left,
-              ),
-              SizedBox(
-                height: 20.0,
-              ),
-              Text(
-                'Favorite footware',
+      body: Container(
+        color: HexColor("#F5F5F5"),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Text(
+                'Payment method',
                 style: TextStyle(
                   fontFamily: 'EB Garamond',
-                  fontWeight: FontWeight.bold,
                   fontSize: 24,
                   color: const Color(0xff282c40),
                   letterSpacing: -0.648,
                 ),
               ),
-              SizedBox(
-                height: 25.0,
-              ),
-              Container(
-                color: Colors.white,
-                child: TextField(
-                  decoration: InputDecoration(
-                    labelText: 'Search Shoes',
-                    prefixIcon: Icon(Icons.search),
-                  ),
-                ),
-              ),
-              Container(
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Container(
                 decoration: BoxDecoration(
-                    border: Border(
-                  bottom: BorderSide(
-                    color: Colors.grey[400],
-                    width: 2.0,
+                  borderRadius: BorderRadius.circular(10.0),
+                  gradient: LinearGradient(
+                    begin: Alignment.topLeft,
+                    end: Alignment(
+                        0.0, 0.7), // 10% of the width, so there are ten blinds.
+                    colors: [
+                      HexColor("#26406E"),
+                      // Colors.amber,
+                      HexColor("#233C67"),
+                    ], // red to yellow
+                    tileMode: TileMode
+                        .repeated, // repeats the gradient over the canvas
                   ),
-                )),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    ButtonBar(
-                      children: [
-                        Container(
-                            decoration: BoxDecoration(
-                                border: Border(
-                              bottom: BorderSide(
-                                color: Colors.blue,
-                                width: 5.0,
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.all(35.0),
+                  child: Column(
+                    children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        children: [
+                          Image(
+                              color: Colors.white,
+                              height: 20.0,
+                              width: 50.0,
+                              image: NetworkImage(
+                                  'https://assets.stickpng.com/images/58482363cef1014c0b5e49c1.png')),
+                        ],
+                      ),
+                      SizedBox(height: 30),
+                      Row(
+                        children: [
+                          Row(
+                            children: [
+                              // Text(
+                              //   '**** **** **** ',
+                              //   style: TextStyle(
+                              //     fontFamily: 'CommercialPi BT',
+                              //     fontSize: 20,
+                              //     color: const Color(0xffffffff),
+                              //     letterSpacing: -1.12,
+                              //   ),
+                              // ),
+                              Icon(Icons.star, size: 10, color: Colors.white),
+                              Icon(Icons.star, size: 10, color: Colors.white),
+                              Icon(Icons.star, size: 10, color: Colors.white),
+                              Icon(Icons.star, size: 10, color: Colors.white),
+                              SizedBox(width: 5),
+                              Icon(Icons.star, size: 10, color: Colors.white),
+                              Icon(Icons.star, size: 10, color: Colors.white),
+                              Icon(Icons.star, size: 10, color: Colors.white),
+                              Icon(Icons.star, size: 10, color: Colors.white),
+                              SizedBox(width: 5),
+                              Icon(Icons.star, size: 10, color: Colors.white),
+                              Icon(Icons.star, size: 10, color: Colors.white),
+                              Icon(Icons.star, size: 10, color: Colors.white),
+                              Icon(Icons.star, size: 10, color: Colors.white),
+                              SizedBox(width: 20),
+                              Text(
+                                '4567',
+                                style: TextStyle(
+                                  fontFamily: 'CommercialPi BT',
+                                  fontSize: 18,
+                                  color: const Color(0xffffffff),
+                                ),
                               ),
-                            )),
-                            child: FlatButton(
-                                onPressed: null,
-                                child: Text(
-                                  'MEN',
-                                  style: TextStyle(color: Colors.blue),
-                                ))),
-                        FlatButton(
-                            onPressed: null,
-                            child: Text(
-                              'WOMEN',
-                            )),
-                        FlatButton(
-                            onPressed: null,
-                            child: Text(
-                              'KID',
-                            )),
-                      ],
-                    ),
-                  ],
+                            ],
+                          ),
+                        ],
+                      ),
+                      SizedBox(height: 45),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Column(
+                            children: [
+                              Text(
+                                'CARD HOLDER',
+                                style: TextStyle(
+                                  fontFamily: 'CommercialPi BT',
+                                  fontSize: 11,
+                                  color: const Color(0x44ffffff),
+                                ),
+                              ),
+                              SizedBox(height: 10),
+                              Text(
+                                'ELAYAMANIK',
+                                style: TextStyle(
+                                  fontFamily: 'CommercialPi BT',
+                                  fontSize: 13,
+                                  color: const Color(0xffffffff),
+                                  letterSpacing: 0.481,
+                                ),
+                              ),
+                            ],
+                          ),
+                          Column(
+                            children: [
+                              Text(
+                                'EXPIRES',
+                                style: TextStyle(
+                                  fontFamily: 'CommercialPi BT',
+                                  fontSize: 11,
+                                  color: const Color(0x44ffffff),
+                                ),
+                              ),
+                              SizedBox(height: 10),
+                              Text(
+                                '3 MARCH',
+                                style: TextStyle(
+                                  fontFamily: 'CommercialPi BT',
+                                  fontSize: 13,
+                                  color: const Color(0xffffffff),
+                                  letterSpacing: 0.481,
+                                ),
+                              ),
+                            ],
+                          ),
+                          Column(
+                            children: [
+                              Text(
+                                'CVV',
+                                style: TextStyle(
+                                  fontFamily: 'CommercialPi BT',
+                                  fontSize: 11,
+                                  color: const Color(0x44ffffff),
+                                ),
+                              ),
+                              SizedBox(height: 10),
+                              Text(
+                                '907',
+                                style: TextStyle(
+                                  fontFamily: 'CommercialPi BT',
+                                  fontSize: 13,
+                                  color: const Color(0xffffffff),
+                                  letterSpacing: 0.481,
+                                ),
+                              ),
+                            ],
+                          )
+                        ],
+                      )
+                    ],
+                  ),
                 ),
               ),
-              SizedBox(
-                height: 20.0,
+            ),
+            Padding(
+              padding: const EdgeInsets.fromLTRB(6, 10, 6, 20),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Container(
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(8.0),
+                          color: HexColor("#5780D9")),
+                      // color: Colors.amber,
+                      height: 50,
+                      width: 360,
+                      child: FlatButton(
+                          onPressed: () {},
+                          child: Text(
+                            '+ ADD NEW CARD',
+                            style: TextStyle(
+                              fontFamily: 'EB Garamond',
+                              fontSize: 12,
+                              color: const Color(0xffffffff),
+                              letterSpacing: -0.324,
+                            ),
+                          )))
+                ],
               ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    'Running shoes',
+                    'Price details',
                     style: TextStyle(
                       fontFamily: 'EB Garamond',
-                      fontSize: 17,
+                      fontSize: 16,
                       color: const Color(0xff282c40),
-                      letterSpacing: -0.459,
+                      letterSpacing: -0.432,
                     ),
                   ),
-                  Text(
-                    'See All',
-                    style: TextStyle(
-                      fontFamily: 'EB Garamond',
-                      fontSize: 11,
-                      color: const Color(0xff4d79d7),
-                      letterSpacing: -0.297,
-                    ),
+                  SizedBox(height: 15),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        'Nike Air Max',
+                        style: TextStyle(
+                          fontFamily: 'EB Garamond',
+                          fontSize: 10,
+                          color: const Color(0xa6282c40),
+                          letterSpacing: -0.27,
+                        ),
+                      ),
+                      Text(
+                        '\$24',
+                        style: TextStyle(
+                          fontFamily: 'EB Garamond',
+                          fontSize: 14,
+                          color: const Color(0xff696c79),
+                          letterSpacing: 0.29400000000000004,
+                          height: 1.6428571428571428,
+                        ),
+                      ),
+                    ],
+                  ),
+                  SizedBox(
+                    height: 5,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        'Delivery fees',
+                        style: TextStyle(
+                          fontFamily: 'Futura',
+                          fontSize: 14,
+                          color: const Color(0x69282c40),
+                          letterSpacing: 0.29400000000000004,
+                          fontWeight: FontWeight.w500,
+                          height: 1.6428571428571428,
+                        ),
+                      ),
+                      Text(
+                        '\$5',
+                        style: TextStyle(
+                          fontFamily: 'EB Garamond',
+                          fontSize: 14,
+                          color: const Color(0xff696c79),
+                          letterSpacing: 0.29400000000000004,
+                          height: 1.6428571428571428,
+                        ),
+                      ),
+                    ],
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      Text(
+                        'Total',
+                        style: TextStyle(
+                          fontFamily: 'EB Garamond',
+                          fontSize: 12,
+                          color: const Color(0xff696c79),
+                          letterSpacing: 0.252,
+                          height: 2.75,
+                        ),
+                      ),
+                      SizedBox(
+                        width: 25.0,
+                      ),
+                      Text(
+                        '\$69',
+                        style: TextStyle(
+                          fontFamily: 'EB Garamond',
+                          fontSize: 20,
+                          color: const Color(0xff282c40),
+                          letterSpacing: 0.42000000000000004,
+                          height: 1.65,
+                        ),
+                      ),
+                    ],
                   ),
                 ],
               ),
-              Container(
-                height: 300,
-                child: ListView(
-                  scrollDirection: Axis.horizontal,
-                  // Starting From Here
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Container(
-                        color: HexColor("#E8EBF2"),
-                        child: Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Stack(
-                            children: [
-                              Positioned(
-                                right: 5.0,
-                                child: Icon(Icons.bookmark),
-                              ),
-                              Image(
-                                  height: 240,
-                                  width: 200,
-                                  image: NetworkImage(
-                                      'https://cdn4.iconfinder.com/data/icons/logos-and-brands/512/230_Nike_logo-512.png')),
-                              Positioned(
-                                right: 0.0,
-                                bottom: 0.0,
-                                left: 0.0,
-                                child: Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Column(
-                                      children: [
-                                        Text(
-                                          'Nike Air Max',
-                                          style: TextStyle(
-                                            fontFamily: 'EB Garamond',
-                                            fontSize: 14,
-                                            color: const Color(0xa6282c40),
-                                            letterSpacing: -0.378,
-                                          ),
-                                        ),
-                                        Text(
-                                          '\$45',
-                                          style: TextStyle(
-                                            fontFamily: 'EB Garamond',
-                                            fontWeight: FontWeight.bold,
-                                            fontSize: 29,
-                                            color: const Color(0xff282c40),
-                                            letterSpacing: -0.783,
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                    Container(
-                                        height: 56,
-                                        width: 54,
-                                        decoration: BoxDecoration(
-                                          borderRadius: BorderRadius.only(
-                                            topLeft: Radius.circular(16.0),
-                                            bottomRight: Radius.circular(5.0),
-                                          ),
-                                          color: const Color(0xff4d79d7),
-                                        ),
-                                        child: Icon(
-                                          Icons.shopping_bag,
-                                          color: Colors.white,
-                                        )),
-                                  ],
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Container(
-                        color: HexColor("#E8EBF2"),
-                        child: Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Stack(
-                            children: [
-                              Positioned(
-                                right: 5.0,
-                                child: Icon(Icons.bookmark),
-                              ),
-                              Image(
-                                  height: 240,
-                                  width: 200,
-                                  image: NetworkImage(
-                                      'https://cdn4.iconfinder.com/data/icons/logos-and-brands/512/230_Nike_logo-512.png')),
-                              Positioned(
-                                right: 0.0,
-                                bottom: 0.0,
-                                left: 0.0,
-                                child: Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Column(
-                                      children: [
-                                        Text(
-                                          'Nike Air Max',
-                                          style: TextStyle(
-                                            fontFamily: 'EB Garamond',
-                                            fontSize: 14,
-                                            color: const Color(0xa6282c40),
-                                            letterSpacing: -0.378,
-                                          ),
-                                        ),
-                                        Text(
-                                          '\$45',
-                                          style: TextStyle(
-                                            fontFamily: 'EB Garamond',
-                                            fontWeight: FontWeight.bold,
-                                            fontSize: 29,
-                                            color: const Color(0xff282c40),
-                                            letterSpacing: -0.783,
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                    Container(
-                                        height: 56,
-                                        width: 54,
-                                        decoration: BoxDecoration(
-                                          borderRadius: BorderRadius.only(
-                                            topLeft: Radius.circular(16.0),
-                                            bottomRight: Radius.circular(5.0),
-                                          ),
-                                          color: const Color(0xff4d79d7),
-                                        ),
-                                        child: Icon(
-                                          Icons.shopping_bag,
-                                          color: Colors.white,
-                                        )),
-                                  ],
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Container(
-                        color: HexColor("#E8EBF2"),
-                        child: Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Stack(
-                            children: [
-                              Positioned(
-                                right: 5.0,
-                                child: Icon(Icons.bookmark),
-                              ),
-                              Image(
-                                  height: 240,
-                                  width: 200,
-                                  image: NetworkImage(
-                                      'https://cdn4.iconfinder.com/data/icons/logos-and-brands/512/230_Nike_logo-512.png')),
-                              Positioned(
-                                right: 0.0,
-                                bottom: 0.0,
-                                left: 0.0,
-                                child: Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Column(
-                                      children: [
-                                        Text(
-                                          'Nike Air Max',
-                                          style: TextStyle(
-                                            fontFamily: 'EB Garamond',
-                                            fontSize: 14,
-                                            color: const Color(0xa6282c40),
-                                            letterSpacing: -0.378,
-                                          ),
-                                        ),
-                                        Text(
-                                          '\$45',
-                                          style: TextStyle(
-                                            fontFamily: 'EB Garamond',
-                                            fontWeight: FontWeight.bold,
-                                            fontSize: 29,
-                                            color: const Color(0xff282c40),
-                                            letterSpacing: -0.783,
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                    Container(
-                                        height: 56,
-                                        width: 54,
-                                        decoration: BoxDecoration(
-                                          borderRadius: BorderRadius.only(
-                                            topLeft: Radius.circular(16.0),
-                                            bottomRight: Radius.circular(5.0),
-                                          ),
-                                          color: const Color(0xff4d79d7),
-                                        ),
-                                        child: Icon(
-                                          Icons.shopping_bag,
-                                          color: Colors.white,
-                                        )),
-                                  ],
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Container(
-                        color: HexColor("#E8EBF2"),
-                        child: Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Stack(
-                            children: [
-                              Positioned(
-                                right: 5.0,
-                                child: Icon(Icons.bookmark),
-                              ),
-                              Image(
-                                  height: 240,
-                                  width: 200,
-                                  image: NetworkImage(
-                                      'https://cdn4.iconfinder.com/data/icons/logos-and-brands/512/230_Nike_logo-512.png')),
-                              Positioned(
-                                right: 0.0,
-                                bottom: 0.0,
-                                left: 0.0,
-                                child: Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Column(
-                                      children: [
-                                        Text(
-                                          'Nike Air Max',
-                                          style: TextStyle(
-                                            fontFamily: 'EB Garamond',
-                                            fontSize: 14,
-                                            color: const Color(0xa6282c40),
-                                            letterSpacing: -0.378,
-                                          ),
-                                        ),
-                                        Text(
-                                          '\$45',
-                                          style: TextStyle(
-                                            fontFamily: 'EB Garamond',
-                                            fontWeight: FontWeight.bold,
-                                            fontSize: 29,
-                                            color: const Color(0xff282c40),
-                                            letterSpacing: -0.783,
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                    Container(
-                                        height: 56,
-                                        width: 54,
-                                        decoration: BoxDecoration(
-                                          borderRadius: BorderRadius.only(
-                                            topLeft: Radius.circular(16.0),
-                                            bottomRight: Radius.circular(5.0),
-                                          ),
-                                          color: const Color(0xff4d79d7),
-                                        ),
-                                        child: Icon(
-                                          Icons.shopping_bag,
-                                          color: Colors.white,
-                                        )),
-                                  ],
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text('Other shoes',style:TextStyle(
-                      fontFamily: 'EB Garamond',
-                      fontSize: 17,
-                      color: const Color(0xff282c40),
-                      letterSpacing: -0.459,
-                    ),),
-                  Text(
-                    'See All',
-                    style: TextStyle(
-                      fontFamily: 'EB Garamond',
-                      fontSize: 11,
-                      color: const Color(0xff4d79d7),
-                      letterSpacing: -0.297,
-                    ),
-                  ),
-                ],
-              ), // *************
-
-              Container(
-                height: 300,
-                child: ListView(
-                  scrollDirection: Axis.horizontal,
-                  // Starting From Here
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Container(
-                        color: HexColor("#E8EBF2"),
-                        child: Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Stack(
-                            children: [
-                              Positioned(
-                                right: 5.0,
-                                child: Icon(Icons.bookmark),
-                              ),
-                              Image(
-                                  height: 240,
-                                  width: 200,
-                                  image: NetworkImage(
-                                      'https://cdn4.iconfinder.com/data/icons/logos-and-brands/512/230_Nike_logo-512.png')),
-                              Positioned(
-                                right: 0.0,
-                                bottom: 0.0,
-                                left: 0.0,
-                                child: Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Column(
-                                      children: [
-                                        Text(
-                                          'Nike Air Max',
-                                          style: TextStyle(
-                                            fontFamily: 'EB Garamond',
-                                            fontSize: 14,
-                                            color: const Color(0xa6282c40),
-                                            letterSpacing: -0.378,
-                                          ),
-                                        ),
-                                        Text(
-                                          '\$45',
-                                          style: TextStyle(
-                                            fontFamily: 'EB Garamond',
-                                            fontWeight: FontWeight.bold,
-                                            fontSize: 29,
-                                            color: const Color(0xff282c40),
-                                            letterSpacing: -0.783,
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                    Container(
-                                        height: 56,
-                                        width: 54,
-                                        decoration: BoxDecoration(
-                                          borderRadius: BorderRadius.only(
-                                            topLeft: Radius.circular(16.0),
-                                            bottomRight: Radius.circular(5.0),
-                                          ),
-                                          color: const Color(0xff4d79d7),
-                                        ),
-                                        child: Icon(
-                                          Icons.shopping_bag,
-                                          color: Colors.white,
-                                        )),
-                                  ],
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Container(
-                        color: HexColor("#E8EBF2"),
-                        child: Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Stack(
-                            children: [
-                              Positioned(
-                                right: 5.0,
-                                child: Icon(Icons.bookmark),
-                              ),
-                              Image(
-                                  height: 240,
-                                  width: 200,
-                                  image: NetworkImage(
-                                      'https://cdn4.iconfinder.com/data/icons/logos-and-brands/512/230_Nike_logo-512.png')),
-                              Positioned(
-                                right: 0.0,
-                                bottom: 0.0,
-                                left: 0.0,
-                                child: Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Column(
-                                      children: [
-                                        Text(
-                                          'Nike Air Max',
-                                          style: TextStyle(
-                                            fontFamily: 'EB Garamond',
-                                            fontSize: 14,
-                                            color: const Color(0xa6282c40),
-                                            letterSpacing: -0.378,
-                                          ),
-                                        ),
-                                        Text(
-                                          '\$45',
-                                          style: TextStyle(
-                                            fontFamily: 'EB Garamond',
-                                            fontWeight: FontWeight.bold,
-                                            fontSize: 29,
-                                            color: const Color(0xff282c40),
-                                            letterSpacing: -0.783,
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                    Container(
-                                        height: 56,
-                                        width: 54,
-                                        decoration: BoxDecoration(
-                                          borderRadius: BorderRadius.only(
-                                            topLeft: Radius.circular(16.0),
-                                            bottomRight: Radius.circular(5.0),
-                                          ),
-                                          color: const Color(0xff4d79d7),
-                                        ),
-                                        child: Icon(
-                                          Icons.shopping_bag,
-                                          color: Colors.white,
-                                        )),
-                                  ],
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Container(
-                        color: HexColor("#E8EBF2"),
-                        child: Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Stack(
-                            children: [
-                              Positioned(
-                                right: 5.0,
-                                child: Icon(Icons.bookmark),
-                              ),
-                              Image(
-                                  height: 240,
-                                  width: 200,
-                                  image: NetworkImage(
-                                      'https://cdn4.iconfinder.com/data/icons/logos-and-brands/512/230_Nike_logo-512.png')),
-                              Positioned(
-                                right: 0.0,
-                                bottom: 0.0,
-                                left: 0.0,
-                                child: Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Column(
-                                      children: [
-                                        Text(
-                                          'Nike Air Max',
-                                          style: TextStyle(
-                                            fontFamily: 'EB Garamond',
-                                            fontSize: 14,
-                                            color: const Color(0xa6282c40),
-                                            letterSpacing: -0.378,
-                                          ),
-                                        ),
-                                        Text(
-                                          '\$45',
-                                          style: TextStyle(
-                                            fontFamily: 'EB Garamond',
-                                            fontWeight: FontWeight.bold,
-                                            fontSize: 29,
-                                            color: const Color(0xff282c40),
-                                            letterSpacing: -0.783,
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                    Container(
-                                        height: 56,
-                                        width: 54,
-                                        decoration: BoxDecoration(
-                                          borderRadius: BorderRadius.only(
-                                            topLeft: Radius.circular(16.0),
-                                            bottomRight: Radius.circular(5.0),
-                                          ),
-                                          color: const Color(0xff4d79d7),
-                                        ),
-                                        child: Icon(
-                                          Icons.shopping_bag,
-                                          color: Colors.white,
-                                        )),
-                                  ],
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Container(
-                        color: HexColor("#E8EBF2"),
-                        child: Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Stack(
-                            children: [
-                              Positioned(
-                                right: 5.0,
-                                child: Icon(Icons.bookmark),
-                              ),
-                              Image(
-                                  height: 240,
-                                  width: 200,
-                                  image: NetworkImage(
-                                      'https://cdn4.iconfinder.com/data/icons/logos-and-brands/512/230_Nike_logo-512.png')),
-                              Positioned(
-                                right: 0.0,
-                                bottom: 0.0,
-                                left: 0.0,
-                                child: Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Column(
-                                      children: [
-                                        Text(
-                                          'Nike Air Max',
-                                          style: TextStyle(
-                                            fontFamily: 'EB Garamond',
-                                            fontSize: 14,
-                                            color: const Color(0xa6282c40),
-                                            letterSpacing: -0.378,
-                                          ),
-                                        ),
-                                        Text(
-                                          '\$45',
-                                          style: TextStyle(
-                                            fontFamily: 'EB Garamond',
-                                            fontWeight: FontWeight.bold,
-                                            fontSize: 29,
-                                            color: const Color(0xff282c40),
-                                            letterSpacing: -0.783,
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                    Container(
-                                        height: 56,
-                                        width: 54,
-                                        decoration: BoxDecoration(
-                                          borderRadius: BorderRadius.only(
-                                            topLeft: Radius.circular(16.0),
-                                            bottomRight: Radius.circular(5.0),
-                                          ),
-                                          color: const Color(0xff4d79d7),
-                                        ),
-                                        child: Icon(
-                                          Icons.shopping_bag,
-                                          color: Colors.white,
-                                        )),
-                                  ],
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              Container(
-                height: 300,
-                child: ListView(
-                  scrollDirection: Axis.horizontal,
-                  // Starting From Here
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Container(
-                        color: HexColor("#E8EBF2"),
-                        child: Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Stack(
-                            children: [
-                              Positioned(
-                                right: 5.0,
-                                child: Icon(Icons.bookmark),
-                              ),
-                              Image(
-                                  height: 240,
-                                  width: 200,
-                                  image: NetworkImage(
-                                      'https://cdn4.iconfinder.com/data/icons/logos-and-brands/512/230_Nike_logo-512.png')),
-                              Positioned(
-                                right: 0.0,
-                                bottom: 0.0,
-                                left: 0.0,
-                                child: Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Column(
-                                      children: [
-                                        Text(
-                                          'Nike Air Max',
-                                          style: TextStyle(
-                                            fontFamily: 'EB Garamond',
-                                            fontSize: 14,
-                                            color: const Color(0xa6282c40),
-                                            letterSpacing: -0.378,
-                                          ),
-                                        ),
-                                        Text(
-                                          '\$45',
-                                          style: TextStyle(
-                                            fontFamily: 'EB Garamond',
-                                            fontWeight: FontWeight.bold,
-                                            fontSize: 29,
-                                            color: const Color(0xff282c40),
-                                            letterSpacing: -0.783,
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                    Container(
-                                        height: 56,
-                                        width: 54,
-                                        decoration: BoxDecoration(
-                                          borderRadius: BorderRadius.only(
-                                            topLeft: Radius.circular(16.0),
-                                            bottomRight: Radius.circular(5.0),
-                                          ),
-                                          color: const Color(0xff4d79d7),
-                                        ),
-                                        child: Icon(
-                                          Icons.shopping_bag,
-                                          color: Colors.white,
-                                        )),
-                                  ],
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Container(
-                        color: HexColor("#E8EBF2"),
-                        child: Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Stack(
-                            children: [
-                              Positioned(
-                                right: 5.0,
-                                child: Icon(Icons.bookmark),
-                              ),
-                              Image(
-                                  height: 240,
-                                  width: 200,
-                                  image: NetworkImage(
-                                      'https://cdn4.iconfinder.com/data/icons/logos-and-brands/512/230_Nike_logo-512.png')),
-                              Positioned(
-                                right: 0.0,
-                                bottom: 0.0,
-                                left: 0.0,
-                                child: Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Column(
-                                      children: [
-                                        Text(
-                                          'Nike Air Max',
-                                          style: TextStyle(
-                                            fontFamily: 'EB Garamond',
-                                            fontSize: 14,
-                                            color: const Color(0xa6282c40),
-                                            letterSpacing: -0.378,
-                                          ),
-                                        ),
-                                        Text(
-                                          '\$45',
-                                          style: TextStyle(
-                                            fontFamily: 'EB Garamond',
-                                            fontWeight: FontWeight.bold,
-                                            fontSize: 29,
-                                            color: const Color(0xff282c40),
-                                            letterSpacing: -0.783,
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                    Container(
-                                        height: 56,
-                                        width: 54,
-                                        decoration: BoxDecoration(
-                                          borderRadius: BorderRadius.only(
-                                            topLeft: Radius.circular(16.0),
-                                            bottomRight: Radius.circular(5.0),
-                                          ),
-                                          color: const Color(0xff4d79d7),
-                                        ),
-                                        child: Icon(
-                                          Icons.shopping_bag,
-                                          color: Colors.white,
-                                        )),
-                                  ],
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Container(
-                        color: HexColor("#E8EBF2"),
-                        child: Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Stack(
-                            children: [
-                              Positioned(
-                                right: 5.0,
-                                child: Icon(Icons.bookmark),
-                              ),
-                              Image(
-                                  height: 240,
-                                  width: 200,
-                                  image: NetworkImage(
-                                      'https://cdn4.iconfinder.com/data/icons/logos-and-brands/512/230_Nike_logo-512.png')),
-                              Positioned(
-                                right: 0.0,
-                                bottom: 0.0,
-                                left: 0.0,
-                                child: Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Column(
-                                      children: [
-                                        Text(
-                                          'Nike Air Max',
-                                          style: TextStyle(
-                                            fontFamily: 'EB Garamond',
-                                            fontSize: 14,
-                                            color: const Color(0xa6282c40),
-                                            letterSpacing: -0.378,
-                                          ),
-                                        ),
-                                        Text(
-                                          '\$45',
-                                          style: TextStyle(
-                                            fontFamily: 'EB Garamond',
-                                            fontWeight: FontWeight.bold,
-                                            fontSize: 29,
-                                            color: const Color(0xff282c40),
-                                            letterSpacing: -0.783,
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                    Container(
-                                        height: 56,
-                                        width: 54,
-                                        decoration: BoxDecoration(
-                                          borderRadius: BorderRadius.only(
-                                            topLeft: Radius.circular(16.0),
-                                            bottomRight: Radius.circular(5.0),
-                                          ),
-                                          color: const Color(0xff4d79d7),
-                                        ),
-                                        child: Icon(
-                                          Icons.shopping_bag,
-                                          color: Colors.white,
-                                        )),
-                                  ],
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Container(
-                        color: HexColor("#E8EBF2"),
-                        child: Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Stack(
-                            children: [
-                              Positioned(
-                                right: 5.0,
-                                child: Icon(Icons.bookmark),
-                              ),
-                              Image(
-                                  height: 240,
-                                  width: 200,
-                                  image: NetworkImage(
-                                      'https://cdn4.iconfinder.com/data/icons/logos-and-brands/512/230_Nike_logo-512.png')),
-                              Positioned(
-                                right: 0.0,
-                                bottom: 0.0,
-                                left: 0.0,
-                                child: Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Column(
-                                      children: [
-                                        Text(
-                                          'Nike Air Max',
-                                          style: TextStyle(
-                                            fontFamily: 'EB Garamond',
-                                            fontSize: 14,
-                                            color: const Color(0xa6282c40),
-                                            letterSpacing: -0.378,
-                                          ),
-                                        ),
-                                        Text(
-                                          '\$45',
-                                          style: TextStyle(
-                                            fontFamily: 'EB Garamond',
-                                            fontWeight: FontWeight.bold,
-                                            fontSize: 29,
-                                            color: const Color(0xff282c40),
-                                            letterSpacing: -0.783,
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                    Container(
-                                        height: 56,
-                                        width: 54,
-                                        decoration: BoxDecoration(
-                                          borderRadius: BorderRadius.only(
-                                            topLeft: Radius.circular(16.0),
-                                            bottomRight: Radius.circular(5.0),
-                                          ),
-                                          color: const Color(0xff4d79d7),
-                                        ),
-                                        child: Icon(
-                                          Icons.shopping_bag,
-                                          color: Colors.white,
-                                        )),
-                                  ],
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              )
-            ],
+            )
+          ],
+        ),
+      ),
+      bottomNavigationBar: Container(
+        height: 50,
+        color: HexColor("#5780D9"),
+        child: FlatButton(
+          child: Text(
+            'PAY \$50',
+            style: TextStyle(
+              fontFamily: 'EB Garamond',
+              fontSize: 17,
+              color: const Color(0xffffffff),
+            ),
           ),
+          onPressed: () {},
         ),
       ),
     );
